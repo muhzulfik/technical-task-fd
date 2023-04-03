@@ -54,8 +54,8 @@ const HomePage = () => {
             withBtn={true}
           />
           <SimpleGrid columns={[2, null, 5]} spacing="20px">
-            {data?.["editor's choice"].map((value) => (
-              <Stack position={"relative"}>
+            {data?.["editor's choice"].map((value, index) => (
+              <Stack position={"relative"} key={index}>
                 <Flex position={"absolute"} zIndex={2} mt={"-12"} ml={4}>
                   <Avatar
                     size="lg"
@@ -137,8 +137,8 @@ const HomePage = () => {
             </Box>
           </Stack>
           <SimpleGrid columns={[2, null, 3]} spacing="20px" p={"6"} pr={"16"}>
-            {data?.["editor's choice"].slice(0, 3).map((value) => (
-              <Link href={"#"}>
+            {data?.["editor's choice"].slice(0, 3).map((value, index) => (
+              <Link href={"#"} key={index}>
                 <Stack>
                   <Card maxW={"xs"}>
                     <CardBody>
@@ -192,8 +192,8 @@ const HomePage = () => {
             withBtn={true}
           />
           <SimpleGrid columns={[2, null, 3]} spacing="20px">
-            {data?.["latest articles"].map((value) => (
-              <Link href={"#"}>
+            {data?.["latest articles"].map((value, index) => (
+              <Link href={"#"} key={index}>
                 <Card maxW={"sm"} variant={"unstyled"}>
                   <CardBody>
                     <Image src={value.image} alt="" borderRadius="lg" />
@@ -309,8 +309,8 @@ const HomePage = () => {
             subTitle={"See our weekly most reviewed products"}
           />
           <SimpleGrid columns={[2, null, 5]} spacing="20px">
-            {data?.["editor's choice"].map((value) => (
-              <Stack position={"relative"}>
+            {data?.["editor's choice"].map((value, index) => (
+              <Stack position={"relative"} key={index}>
                 <Link href={"#"}>
                   <Card maxW={"xs"} variant={"unstyled"}>
                     <CardBody>

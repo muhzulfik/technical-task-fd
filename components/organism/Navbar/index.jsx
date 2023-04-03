@@ -45,10 +45,9 @@ export default function Nav() {
           </HStack>
           <Box flex={1} mx={8}>
             <InputGroup>
-              <InputLeftElement
-                pointerEvents="none"
-                children={<SearchIcon color="gray.300" />}
-              />
+              <InputLeftElement pointerEvents="none">
+                <SearchIcon color="gray.300" />
+              </InputLeftElement>
               <Input
                 type="tel"
                 placeholder="Search products, articles, topics, brands, etc"
@@ -63,11 +62,12 @@ export default function Nav() {
       <Box px={4} borderBottom={"2px"} borderBottomColor={"gray.200"}>
         <Center h={14}>
           <HStack spacing={"4"}>
-            {nav.map((value) => (
+            {nav.map((value, index) => (
               <Link
                 textStyle="title-small"
                 href={value.href}
                 style={{ textDecoration: "none" }}
+                key={index}
               >
                 {value.label}
               </Link>
