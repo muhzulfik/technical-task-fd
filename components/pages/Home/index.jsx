@@ -1,7 +1,6 @@
-import { StarIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { StarIcon } from "@chakra-ui/icons";
 import {
   Text,
-  Center,
   VStack,
   HStack,
   Stack,
@@ -14,13 +13,11 @@ import {
   SimpleGrid,
   Spacer,
   Button,
-  AspectRatio,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import EmptyFrame from "@/components/molecules/EmptyFrame";
 import TitleSection from "@/components/molecules/TitleSection";
-import Carousel from "@/components/organism/Carousels";
 import Link from "next/link";
 import NextImage from "@/components/atoms/NextImage";
 
@@ -32,7 +29,6 @@ const HomePage = () => {
       .get("https://virtserver.swaggerhub.com/hqms/FDN-WP/0.1/wp")
       .then((res) => {
         setData(res.data);
-        console.log("ini merupakan data editor", res.data?.["editor's choice"]);
       });
   }, []);
 
